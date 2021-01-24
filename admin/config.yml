@@ -1,82 +1,71 @@
 backend:
   name: git-gateway
+  branch: main
 
-# Backend
+# when using the default proxy server port
 local_backend: true
 
-# Publish Mode
-publish_mode: editorial_workflow 
 
-# Site URL
-site_url: https://Lapidify.tk
+# publish mode
+publish_mode: editorial_workflow
 
-# media folder
-media_folder: "images/uploads"
+# medial library
+media_folder: "uploads"
 
-# Logo URL
-logo_url: /assets/images/netlify-cms.png
-
+# collections
 collections:
-  - label: "Category"
-    name: "category"
-    folder: "_category"
-    create: false
-    identifier_field: "name"
+# topics
+  - label: "Topics"
+    name: "topics"
+    folder: "_topics"
+    create: true
     slug: "{{slug}}"
+    delete: false
     editor:
       preview: false
       delete: false
     fields:
-      - label: "Identifier Name"
-        name: "name"
+      - label: "Topic Title"
+        name: "title"
         widget: "string"
         required: true
-        hint: "Ex: john (Use samll letters)"
-      - label: "Display Name"
-        name: "display_name"
-        widget: "string"
-        required: true
-        hint: "Ex: John Doe"
-      - label: "Background color"
-        name: "bg_color"
-        widget: "string"
-        required: true
-        hint: "Ex: ff63ff"
-      - label: "Text Color"
-        name: "color"
-        widget: "string"
-        required: true
-        hint: "Ex: ff63ff"
+        hint: "Enter the topic title."
+      - label: "Brief Description about the topic"
+        name: "body"
+        widget: "markdown"
+        required: false
+# Authors 
   - label: "Authors"
     name: "authors"
     folder: "_authors"
     create: true
     identifier_field: "name"
     slug: "{{slug}}"
+    delete: false
     editor:
       preview: false
       delete: false
     fields:
-      - label: "Shortname"
+      - label: "Identifying Name"
         name: "name"
         widget: "string"
         required: true
-        hint: "Ex: john (Use samll letters)"
+        hint: "Use a code or name which is used to identify otherthan name.)"
       - label: "Display Name"
         name: "display_name"
         widget: "string"
         required: true
-        hint: "Ex: John Doe"
+        hint: "Your Fullname."
+      - label: "Your profile color"
+        name: "auth_color"
+        widget: "color"
+        required: true
+        hint: "Choose a color to use in your profile page for elements like buttons etc."
       - label: "Avatar"
         name: "avatar"
         widget: "image"
         required: false
-        hint: "Use optimised images"
-      - label: "Gravatar ID"
-        name: "gravatar"
-        widget: "string"
-        required: false
-        hint: "Ex: b1cc14991db7a456fcd761680bbc8f81"
+        hint: "Your Profile picture"
       - label: "E-mail"
         name: "email"
         widget: "string"
@@ -87,67 +76,155 @@ collections:
         widget: "string"
         required: false
         hint: "Ex: johdoe.me"
-      - label: "Instagram"
-        name: "insta"
+      - label: "Facebook Username"
+        name: "facebook"
         widget: "string"
         required: false
-        hint: "Instagram username."
-      - label: "Twitter Link"
+        hint: "Ex: john_doe"
+      - label: "Instagram Username"
+        name: "instagram"
+        widget: "string"
+        required: false
+        hint: "Ex: john_doe"
+      - label: "Whatsapp Number"
+        name: "whatsapp"
+        widget: "string"
+        required: false
+        hint: "Ex: john_doe"
+      - label: "Twitter Username"
         name: "twitter"
         widget: "string"
         required: false
-        hint: "Ex: https://twitter.com/johndoe"
-      - label: "About You"
-        name: "description"
-        widget: "text"
+        hint: "Ex: john_doe"
+      - label: "GitHub Username"
+        name: "github"
+        widget: "string"
         required: false
-  - label: "Facts"
-    name: "facts"
-    folder: "_facts"
+        hint: "Ex: johndoe4"
+      - label: "About You"
+        name: "body"
+        widget: "markdown"
+        required: false
+# podcasts
+  - label: "Podcasts"
+    name: "podcasts"
+    folder: "_podcasts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "title"
+    slug: "{{slug}}"
+    delete: true
     editor:
       preview: false
-      delete: false
+      delete: true
     fields:
       - label: "Publish Date"
         name: "date"
         widget: "datetime"
         format: "YYYY-MM-DD HH:mm:ss"
-      - label: "Author"
-        name: "author"
-        widget: "relation"
-        collection: "authors"
-        searchFields: [display_name]
-        displayFields: [display_name]
-        valueField: "name"
-        required: true
-        hint: "Ex: John Doe"
       - label: "Title"
         name: "title"
         widget: "string"
         required: true
-        hint: "Ex: What the fact about?"
-      - label: "Category"
-        name: "category"
+        hint: "Title of the podcasts. It must be catchy and brief."
+      - label: "Author"
+        name: "author"
         widget: "relation"
-        collection: "category"
-        searchFields: [display_name]
-        displayFields: [display_name]
-        valueField: "name"
+        collection: "authors"
+        search_fields: [display_name]
+        display_fields: [display_name]
+        value_field: "name"
         required: true
-        hint: "Ex: ff63ff"
-      - label: "Body"
+        hint: "Select the author from the dropdown list."
+      - label: "Related Topic"
+        name: "topic"
+        widget: "relation"
+        collection: "topics"
+        search_fields: [title]
+        display_fields: [title]
+        value_field: "title"
+        required: true
+        hint: "Select the author from the dropdown list."
+      - label: "Thumbnail"
+        name: "image"
+        widget: "image"
+        required: true
+        hint: "Upload a image related to the podcast."
+      - label: "Audio file"
+        name: "podcast"
+        widget: "file"
+        required: true
+        hint: "Upload you podcast. File size below 10mb"    
+      - label: "Description about podcast"
         name: "body"
         widget: "markdown"
-  - label: "Posts"
-    name: "posts"
+        required: false
+# videos
+  - label: "Videos"
+    name: "videos"
+    folder: "_videos"
+    create: true
+    identifier_field: "title"
+    slug: "{{slug}}"
+    delete: true
+    editor:
+      preview: false
+      delete: true
+    fields:
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Title of the video. It must be catchy and brief."
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        search_fields: [display_name]
+        display_fields: [display_name]
+        value_field: "name"
+        required: true
+        hint: "Select the author from the dropdown list."
+      - label: "Related Topic"
+        name: "topic"
+        widget: "relation"
+        collection: "topics"
+        search_fields: [title]
+        display_fields: [title]
+        value_field: "title"
+        required: true
+        hint: "Select the author from the dropdown list."
+      - label: "Thumbnail"
+        name: "image"
+        widget: "image"
+        required: true
+        hint: "Upload a image related to the podcast."
+      - label: "Video Platform"
+        name: "video_platform"
+        widget: "select"
+        options:
+          - { label: "Youtube", value: "youtube" }
+          - { label: "Dailymotion", value: "dailymotion" }
+      - label: "Video link"
+        name: "video"
+        widget: "string"
+        required: true
+        hint: "Enter your video link."    
+      - label: "Description about podcast"
+        name: "body"
+        widget: "markdown"
+        required: false
+# articles
+  - label: "Articles"
+    name: "articles"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
       preview: false
-      delete: false
     extension: "md"
     fields:
       - label: "Publish Date"
@@ -162,6 +239,12 @@ collections:
         name: "title"
         widget: "string"
         required: true
+        hint: "Ex: My First Awesome Post!"
+      - label: "Thumbnail"
+        name: "image"
+        widget: "image"
+        required: true
+        hint: "Upload a image related to the post."
       - label: "Author"
         name: "author"
         widget: "relation"
@@ -170,46 +253,25 @@ collections:
         displayFields: [display_name]
         valueField: "name"
         required: true
-        hint: "Ex: John Doe"
-      - label: "Category"
-        name: "category"
+        hint: "Select the author of the post."
+      - label: "Topic"
+        name: "topic"
         widget: "relation"
-        collection: "category"
-        searchFields: [display_name]
-        displayFields: [display_name]
-        valueField: "name"
+        collection: "topics"
+        searchFields: [title]
+        displayFields: [title]
+        valueField: "title"
         required: true
+        hint: "Select a topic related to this article."
       - label: "Tags"
         name: "tags"
         widget: "list"
-        hint: "Each tag is separated with comma."
-      - label: "Featured Image"
-        name: "image"
-        widget: "image"
-        required: false
-        hint: "Try to add optimised image below 1MB. Make site load faster."
-      - label: "Description"
+        hint: "Tags help to get indexed by search engines."
+      - label: "Small Description"
         name: "description"
-        widget: "string"
+        widget: "text"
         required: false
-        hint: "Small description about the post or review."
-      - label: "Content Rating"
-        name: "rating"
-        widget: "number"
-        min: 0
-        max: 5
-        step: 0.5
-        valueType: "float"
-        required: false
-      - label: "Image Shadow"
-        name: "imageshadow"
-        widget: "boolean"
-        required: false
-      - label: "TOC"
-        name: "toc"
-        widget: "boolean"
-        required: false
-      - label: "Body"
+        hint: "This text is used by search engines."
+      - label: "Article body"
         name: "body"
         widget: "markdown"
-  
