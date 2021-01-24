@@ -3,14 +3,24 @@ date: 2021-01-13 22:01:21
 layout: post
 title: Health and Politics
 image: /uploads/deletelater.jpg
-author: sameera
+author: Sameera
 topic: Social Medicine
 tags:
   - socialmedicine
   - health
-  - "politicsinmedicine #mentalhealth #medicalethics #healthandpolitics #doctor
-    #biopsychosocialmodel #completewellbeing #GeorgeEngel #RudolfVirchow
-    #doctorpatientrelationship #communication #empathy #WHO"
+  - politicsinmedicine
+  - mentalhealth
+  - medicalethics
+  - healthandpolitics
+  - doctor
+  - biopsychosocialmodel
+  - completewellbeing
+  - GeorgeEngel
+  - RudolfVirchow
+  - doctorpatientrelationship
+  - communication
+  - empathy
+  - WHO
 description: ""
 ---
 According to the **WHO**, health is defined as a *state of complete physical, mental and social wellbeing and not merely the absence of disease or infirmity.* The absence of a disease or symptoms does not guarantee happiness or complete health.\
