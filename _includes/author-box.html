@@ -3,7 +3,7 @@
 {% if site.authorbox == "enabled" %}
 <div class="authorbox align-items-center">
     <div class="author_section">
-        <div class="author_post_avatar" style="background-image: url('{{site.baseurl}}{{ author.avatar }}');">
+        <div class="author_post_avatar" style="{% if author.avatar %}background-image: url('{{ site.baseurl }}{{ author.avatar }}');{% else %}{% if author.gender == 'female' %}background-image: url('{{ site.baseurl }}/assets/toy_faces/ToyFaces_Colored_BG_8.jpg');{% else %}background-image: url('{{ site.baseurl }}/assets/toy_faces/ToyFaces_Colored_BG_29.jpg');{% endif %}{% endif %}">
         </div>
         <div class="author_post_info">
             <span class="post_author-name"><a target="_blank" class="text-dark" href="{{ author.web }}">{{ author.display_name }}</a></span>
