@@ -14,6 +14,26 @@ media_folder: "uploads"
 
 # collections
 collections:
+# Main Categories
+  - label: "Main Categories"
+    name: "main_categories"
+    folder: "_main.categories"
+    create: true
+    slug: "{{slug}}"
+    delete: false
+    editor:
+      preview: false
+      delete: false
+    fields:
+      - label: "Category Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Enter the Category title."
+      - label: "Brief Description about the main category"
+        name: "body"
+        widget: "markdown"
+        required: true
 # topics
   - label: "Topics"
     name: "topics"
@@ -30,6 +50,15 @@ collections:
         widget: "string"
         required: true
         hint: "Enter the topic title."
+      - label: "Main Category"
+        name: "main_category"
+        widget: "relation"
+        collection: "main_categories"
+        search_fields: [title]
+        display_fields: [title]
+        value_field: "title"
+        required: true
+        hint: "Select the the main category where the topic belongs."
       - label: "Brief Description about the topic"
         name: "body"
         widget: "markdown"
@@ -66,6 +95,18 @@ collections:
         widget: "image"
         required: false
         hint: "Your Profile picture"
+      - label: "Show my profile photo"
+        name: "show_my_photo"
+        widget: "select"
+        options:
+          - { label: "Yes, Sure!", value: "yes" }
+          - { label: "No, I don't like it!", value: "no" }
+      - label: "Gender"
+        name: "gender"
+        widget: "select"
+        options:
+          - { label: "Male", value: "male" }
+          - { label: "Female", value: "female" }
       - label: "E-mail"
         name: "email"
         widget: "string"
