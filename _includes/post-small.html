@@ -1,0 +1,13 @@
+{% assign category = site.category | where: "name", post.category | first %}
+<div class="post_small">
+    <div class="post_small-image" style="background-image: url('../assets/images/1.jpg');background-size: cover;background-position: center;">
+        <span class="post_small-image_icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        </span>
+    </div>
+    <div class="post-small-excerpt">
+        <span class="post_small-excerpt_date">{{ post.date | date_to_string }}</span>
+        <span class="post_small-excerpt_heading">{{ post.title | truncate:40 }}</span>
+        <span class="post_small-ecerpt_topic">{{ category.display_name }}</span>
+    </div>
+</div>

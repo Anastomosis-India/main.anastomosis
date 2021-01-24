@@ -1,0 +1,63 @@
+---
+title: Content Contribution
+permalink: "/content-contribution"
+layout: page
+comments: false
+bg_color: eefffd
+color: 7cffe6
+---
+
+<form action="https://formspree.io/{{site.data.metadata.email}}" method="POST">
+<p class="mb-4">💖 Contribute your valueble information to {{site.name}}. Every piece of information is important😍. If you are not familier with markdown editor see the <a href="https://simplemde.com/markdown-guide">docs</a>.</p>
+<div class="form-group row">
+    <div class="col-md-6">
+    <label class="label-contributor" for="first-name">🧑First Name
+    <input class="form-control" type="text" name="first Name" placeholder="First Name" required>
+    </label>
+    </div>
+    <div class="col-md-6">
+    <label class="label-contributor" for="first-name">👦Second Name
+    <input class="form-control" type="text" name="Second Name" placeholder="Second Name">
+    </label>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-6">
+    <label class="label-contributor" for="first-name">🧙‍♂️Instagram
+    <input class="form-control" type="text" name="Instagram Username" placeholder="Instagram Username">
+    </label>
+    </div>
+    <div class="col-md-6">
+    <label class="label-contributor" for="first-name">📧E-mail
+    <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required>
+    </label>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-6">
+    <label class="label-contributor" for="cars">📮 Choose the content type</label>
+    <select id="cantent-type" name="Content Type" style="width: 100%;font-size: 13px;" required>
+        <option value="Facts">Facts</option>
+        <option value="Posts">Posts</option>
+    </select>
+    </div>
+    <div class="col-md-6">
+    <label class="label-contributor" for="cars">👇 Choose the category</label>
+    <select id="category" name="Category" style="width: 100%;font-size: 13px;" required>
+        {% for category in site.category %}
+        <option value="{{category.title}}">{{category.display_name}}</option>
+        {% endfor %}
+    </select>
+    </div>
+</div>
+<div class="form-group row">
+    <div class="col-md-12">
+    <label class="label-contributor" for="first-name">👉Title of the Content
+    <input class="form-control" type="text" name="Title" placeholder="Title of the content" required>
+    </label>
+    </div>
+</div>
+<label class="label-contributor" for="first-name">📃Content</label> 
+<textarea id="demo" rows="8" class="form-control mb-3" name="Content" placeholder="Type your content" required></textarea>   
+<input class="btn" value="Send 👉" type="submit" style="color: #{{page.bg_color}};background: #{{page.color}};border-radius:7px;border-color:transparent;font-weight:700;">
+</form>

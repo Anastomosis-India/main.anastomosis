@@ -1,0 +1,35 @@
+---
+label: Blog Template
+hide_body: false
+fields:
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: layout
+  label: layout
+  default: post
+  hidden: true
+- type: text
+  name: title
+  label: title
+- type: text
+  name: author
+  label: author
+- type: text
+  name: category
+  label: category
+- type: list
+  name: tags
+  label: tags
+- type: text
+  name: description
+  label: description
+- type: boolean
+  name: adsense
+  label: adsense
+pages:
+- _posts/2020-09-22-who-were-the-three-great-philosophers-who-shaped-the-ancient-world.md
+- _posts/2020-09-22-why-confucius-considered-a-guide-of-the-ancient-world.md
+- _posts/2020-09-22-why-did-the-development-of-the-calender-help-the-development-of-civilization.md
+- _posts/2020-09-25-why-was-the-microscope-a-path-breaking-invention.md

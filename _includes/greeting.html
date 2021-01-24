@@ -1,0 +1,43 @@
+<script>
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var icon;
+
+    if (hrs < 12)
+        icon = '<span class="icon-cloudy1"></span> ';
+    else if (hrs >= 12 && hrs <= 17)
+        icon = '<span class="icon-sun"></span> ';
+    else if (hrs >= 17 && hrs <= 24)
+        icon = '<span class="icon-weather"></span> ';
+
+    var author;
+
+    if (hrs < 12)
+        author = 'Nanea Hoffman';
+    else if (hrs >= 12 && hrs <= 17)
+        author = 'Unknown';
+    else if (hrs >= 17 && hrs <= 24)
+        author = 'Will Alsop';
+
+    var qoute;
+
+    if (hrs < 12)
+        qoute = 'Today’s goals: Coffee and kindness. Maybe two coffees, and then kindness.';
+    else if (hrs >= 12 && hrs <= 17)
+        qoute = 'Life is a magic. The beauty of life is the next second. Enjoy this afternoon.';
+    else if (hrs >= 17 && hrs <= 24)
+        qoute = 'Beauty is a fact, and it can change with time. Something ugly in the morning can become beautiful in the evening.';
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Good Morning';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening';
+
+    document.getElementById('greetings').innerHTML =
+        '<span class="index-heading" style="color:#2e2f34;">' + icon + greet + '</span>' + '<div class="greeting_qoute"><span class="qoute">' + qoute + '</span><span class="greeting_author">~ ' + author + '</span></div>';
+</script>

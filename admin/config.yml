@@ -1,0 +1,215 @@
+backend:
+  name: git-gateway
+
+# Backend
+local_backend: true
+
+# Publish Mode
+publish_mode: editorial_workflow 
+
+# Site URL
+site_url: https://Lapidify.tk
+
+# media folder
+media_folder: "images/uploads"
+
+# Logo URL
+logo_url: /assets/images/netlify-cms.png
+
+collections:
+  - label: "Category"
+    name: "category"
+    folder: "_category"
+    create: false
+    identifier_field: "name"
+    slug: "{{slug}}"
+    editor:
+      preview: false
+      delete: false
+    fields:
+      - label: "Identifier Name"
+        name: "name"
+        widget: "string"
+        required: true
+        hint: "Ex: john (Use samll letters)"
+      - label: "Display Name"
+        name: "display_name"
+        widget: "string"
+        required: true
+        hint: "Ex: John Doe"
+      - label: "Background color"
+        name: "bg_color"
+        widget: "string"
+        required: true
+        hint: "Ex: ff63ff"
+      - label: "Text Color"
+        name: "color"
+        widget: "string"
+        required: true
+        hint: "Ex: ff63ff"
+  - label: "Authors"
+    name: "authors"
+    folder: "_authors"
+    create: true
+    identifier_field: "name"
+    slug: "{{slug}}"
+    editor:
+      preview: false
+      delete: false
+    fields:
+      - label: "Shortname"
+        name: "name"
+        widget: "string"
+        required: true
+        hint: "Ex: john (Use samll letters)"
+      - label: "Display Name"
+        name: "display_name"
+        widget: "string"
+        required: true
+        hint: "Ex: John Doe"
+      - label: "Avatar"
+        name: "avatar"
+        widget: "image"
+        required: false
+        hint: "Use optimised images"
+      - label: "Gravatar ID"
+        name: "gravatar"
+        widget: "string"
+        required: false
+        hint: "Ex: b1cc14991db7a456fcd761680bbc8f81"
+      - label: "E-mail"
+        name: "email"
+        widget: "string"
+        required: false
+        hint: "Ex: john@example.com"
+      - label: "Website"
+        name: "web"
+        widget: "string"
+        required: false
+        hint: "Ex: johdoe.me"
+      - label: "Instagram"
+        name: "insta"
+        widget: "string"
+        required: false
+        hint: "Instagram username."
+      - label: "Twitter Link"
+        name: "twitter"
+        widget: "string"
+        required: false
+        hint: "Ex: https://twitter.com/johndoe"
+      - label: "About You"
+        name: "description"
+        widget: "text"
+        required: false
+  - label: "Facts"
+    name: "facts"
+    folder: "_facts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+      delete: false
+    fields:
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        searchFields: [display_name]
+        displayFields: [display_name]
+        valueField: "name"
+        required: true
+        hint: "Ex: John Doe"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Ex: What the fact about?"
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "category"
+        searchFields: [display_name]
+        displayFields: [display_name]
+        valueField: "name"
+        required: true
+        hint: "Ex: ff63ff"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+  - label: "Posts"
+    name: "posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+      delete: false
+    extension: "md"
+    fields:
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD HH:mm:ss"
+      - label: "Layout"
+        name: "layout"
+        widget: "hidden"
+        default: "post"
+      - label: "Post Title"
+        name: "title"
+        widget: "string"
+        required: true
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        searchFields: [display_name]
+        displayFields: [display_name]
+        valueField: "name"
+        required: true
+        hint: "Ex: John Doe"
+      - label: "Category"
+        name: "category"
+        widget: "relation"
+        collection: "category"
+        searchFields: [display_name]
+        displayFields: [display_name]
+        valueField: "name"
+        required: true
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        hint: "Each tag is separated with comma."
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Try to add optimised image below 1MB. Make site load faster."
+      - label: "Description"
+        name: "description"
+        widget: "string"
+        required: false
+        hint: "Small description about the post or review."
+      - label: "Content Rating"
+        name: "rating"
+        widget: "number"
+        min: 0
+        max: 5
+        step: 0.5
+        valueType: "float"
+        required: false
+      - label: "Image Shadow"
+        name: "imageshadow"
+        widget: "boolean"
+        required: false
+      - label: "TOC"
+        name: "toc"
+        widget: "boolean"
+        required: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+  

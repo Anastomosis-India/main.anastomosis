@@ -1,0 +1,17 @@
+# Site Metadata
+title: Lapidify
+name: Lapidify
+description: We take you to the awesome world of knowledge. Read contents from almost all ypur favorite topics including science, technology, facts etc. Enjoy!
+# Icons
+logo: assets/images/logo.png
+icon: assets/images/logo.png
+apple_144: /assets/images/apple_144.png
+apple_114: /assets/images/apple_114.png
+apple_72: /assets/images/apple_72.png
+ogimage: /assets/images/og_twitter image.jpg
+twitterimage: /assets/images/og_twitter image.jpg
+favicon: assets/images/logo.ico
+# Email
+email: lapidify.in@gmail.com
+# Author
+author: Muhammed Ashfar

@@ -1,0 +1,41 @@
+<!-- begin post -->
+{% assign author = site.authors | where: "name", post.author | first %}
+{% assign category = site.category | where: "name", post.category | first %}
+
+<div class="blog-grid-item">
+    <div class="post-shadow-category card h-100 {{category.name}}" style="background: linear-gradient(to bottom, #{{category.bg_color}} 0%, #fff 100%);">
+        <div class="card-body">
+            {% if post.category %}
+            <span class="category {{category.name}}" style="background: #{{category.color}};"><a href="{{site.baseurl}}{{category.url}}" style="text-decoration: none;color: #212529;">{{ category.display_name }}</a></span>
+            {% endif %}
+            <h2 class="card-title">
+                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                {% if post.rating %}
+                <div class="mb-2 mt-2 font-weight-normal">
+                {% include star_rating_postbox.html %}
+                </div>
+                {% endif %}
+            </h2>
+            <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
+        </div>
+        <div class="card-footer">
+            <div class="wrapfooter">
+                {% if post.author %}
+                <span class="meta-footer-thumb">
+                {% if author.avatar %}
+                <img class="author-thumb" src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.display_name }}">
+                {% else %}
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+                {% endif %}
+                </span>
+                <span class="author-meta">
+                <span class="post-name"><a target="_blank" href="{{ author.web }}">{{ author.display_name }}</a><span class="social">@{{author.insta}}</span></span>
+                {% endif %}
+                <span class="post-date hidden">{{ post.date | date_to_string }}</span>
+                </span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->

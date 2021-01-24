@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<span class="index-heading" style="color: #{{page.color}};">{{page.display_name}}</span>
+{{content}}
+<div class="blog-grid-container">
+  {% assign filtered_posts = site.posts | where: 'category', page.name | where_exp:"post","post.is_generated != true" %}
+  {% for post in filtered_posts %}
+          {% include postbox.html %}
+  {% endfor %}
+</div>
+<div class="blog-grid-container">
+  {% assign filtered_facts = site.facts | where: 'category', page.name | where_exp:"fact","fact.is_generated != true" %}
+  {% for fact in filtered_facts %}
+          {% include facts.html %}
+  {% endfor %}
+</div>

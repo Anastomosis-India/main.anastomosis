@@ -1,0 +1,9 @@
+{% assign category = site.category | where: "name", fact.category | first %}
+<div class="crazy-facts" style="background: linear-gradient(to right bottom, #{{category.bg_color}} 0%, #fff 100%);box-shadow:0px 2px 40px 0px rgba(0,52,102,0.11) !important;">
+       {% if fact.category %}
+       <span class="category {{category.name}}" style="background: #{{category.color}};"><a href="{{site.baseurl}}{{category.url}}" style="text-decoration: none;color: #212529;">{{ category.display_name }}</a></span>
+       {% endif %}
+       <span class="fact-text">
+           <p>{{ fact.excerpt | strip_html | truncatewords:20 }} <i><a href="{{site.baseurl}}{{fact.url}}" style="color: #{{category.color}};font-size:13px;">[Read More]</a></i></p>
+       </span>
+   </div>

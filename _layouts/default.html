@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="{{ site.baseurl }}{{site.data.metadata.icon}}">
+
+<title>{{ page.title }} | {{site.name}}</title>
+<meta name="author" content="{{site.data.metadata.author}}">
+<meta name="description" content="{{site.data.metadata.description}}">
+
+<meta property="og:image" content="{{site.baseurl}}{{site.data.metadata.ogimage}}">
+<meta property="og:description" content="{{site.data.metadata.description}}">
+<meta property="og:title" content="{{site.data.metadata.title}}">
+
+<meta property="twitter:image" content="{{site.baseurl}}{{site.data.metadata.twitterimage}}">
+<meta property="twitter:description" content="{{site.data.metadata.description}}">
+<meta property="twitter:title" content="{{site.data.metadata.title}}">
+
+<link rel="shortcut icon" href="{{site.data.metadata.favicon}}" type="image/x-icon">
+
+<!-- App Manifest-->
+<link rel="manifest" href="{{site.baseurl}}/manifest.json">
+
+<!-- third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{site.data.metadata.apple_144}}">
+<!-- iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{site.data.metadata.apple_114}}">
+<!-- first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{site.data.metadata.apple_72}}">
+<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="{{site.data.metadata.icon}}">
+<!-- basic favicon -->
+<link rel="shortcut icon" href="{{site.data.metadata.icon}}">
+
+{% assign category = site.category | where: "name", page.category | first %}
+<!-- Theme color -->
+<meta name="theme-color" {% if page.color %}content="#{{page.color}}"{% endif %}{% if page.category %}content="#{{category.color}}"{% endif %}>
+
+<!-- Nunito - Google fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- owlcarousel-->
+<link rel="stylesheet" href="{{site.baseurl}}/owlcarousel/owl.carousel.min.css">
+
+<!-- Markdown Editor -->
+<link rel="stylesheet" href="{{site.baseurl}}/assets/css/markdown-editor.css">
+
+<!-- Feather & Meteocons Icons -->
+<link rel="stylesheet" href="{{site.baseurl}}/assets/icons/meteocons_feather/style.css">
+
+<!-- Slick Slider -->
+<link rel="stylesheet" href="{{site.baseurl}}/assets/slick/slick.css">
+<link rel="stylesheet" href="{{site.baseurl}}/assets/slick/slick-theme.css">
+
+<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+<!-- end owlcarousel -->
+<link href="{{ site.baseurl }}/assets/css/prism.css" rel="stylesheet">
+
+<link href="{{ site.baseurl }}/assets/css/theme.css" rel="stylesheet">
+
+<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+
+<!-- Adsense -->
+<script data-ad-client="ca-pub-4944786899709076" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<!-- Jekyll PWA Script-->
+<script type="module">
+import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+const el = document.createElement('pwa-update');
+document.body.appendChild(el)
+</script>
+
+
+{% if jekyll.environment == 'production' %}
+<!-- change your GA id in _config.yml -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', '{{site.analytics.google_analytics}}', 'auto');
+ga('send', 'pageview');
+</script>
+{% endif %}
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+{% assign category = site.category | where: "name", page.category | first %}
+<body {% if page.bg_color %}style="background: linear-gradient(to right bottom, #{{page.bg_color}} 0%, #fff 100%);"{% endif %}{% if page.category %}style="background: linear-gradient(to right bottom, #{{category.bg_color}} 0%, #fff 100%);"{% endif %}>
+	<!-- defer loading of font and font awesome -->
+	<noscript id="deferred-styles">
+		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</noscript>
+<!-- Menu -->
+{% include app-menu.html %}
+<!-- Begin Sidebar Navigation
+================================================== -->
+
+<div class="sidebar">
+</div>
+<div class="nav-icon">
+    <div class="hamburger-bar"></div>
+</div>
+<div id="blackover-nav" class="blackover"></div>
+<nav id="menu">
+    <ul>
+        <h3>Navigation</h3>
+    {% for item in site.data.menu.menu %}
+      {% if item.title and item.url %}
+        <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#{{item.color}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{item.svg-class}}">{{item.svg}}</svg>
+        <a href="{{ site.baseurl }}{{item.url}}" style="color: #{{item.color}}">{{ item.title}} 
+                <span class="badge" style="background-color: #{{item.color}};color: #fff;border-radius: 10px;">{{ item.badge }}</span> 
+                <span class="menu-subheading">{{item.subheading}}</span>
+            </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+</nav>
+
+
+
+<!-- End Sidebar Navigation
+================================================== -->
+
+<div class="site-content">
+    <div class="logo-box">
+        <span class="logo-text">
+            {% include lapidify-logo.html %}
+        </span>
+    </div>
+<div class="container">
+
+    {% include search-lunr.html %}
+
+    <!-- Content
+    ================================================== -->
+    <div class="main-content">
+        {{ content }}
+    </div>
+
+    <!--{% if site.mailchimp-list %}
+     Newsletter
+    ==================================================
+    <div class="newsletter text-center">
+        <span class="h4"><img src="{{ site.baseurl }}/{{ site.logo }}" class="newsletter-logo" alt="{{site.title}}"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+        <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
+            <div class="mc-field-group d-inline-flex">
+            <input type="email" placeholder="Your e-mail" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
+            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            </div>
+        </form>
+    </div>
+    {% endif %}-->
+
+</div>
+
+<!-- Begin Footer
+================================================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 text-center text-lg-left">
+                Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
+            </div>
+            <div class="col-md-6 col-sm-12 text-center text-lg-right">
+                <a target="_blank" href="">Lapidify theme</a> by Muhammed Ashfar
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer
+================================================== -->
+
+</div> 
+
+<!-- /.site-content -->
+
+<!-- Scripts (if you need bootstrap.js, please add it yourself. I didn't use it for performance reasons, it was not needed in this theme)
+================================================== -->
+<!-- Include the script that adds Netlify Identity Widget  -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<!-- End script of Netlify CMS -->
+<!-- slick JS -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/assets/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/assets/slick/slick-settings.js"></script>
+<!-- Owlcarousel -->
+<script src="{{site.baseurl}}/owlcarousel/jquery.min.js"></script>
+
+<script src="{{site.baseurl}}/owlcarousel/owl.carousel.min.js"></script>
+<!--end-->
+
+<!-- Greeting JS -->
+{% include greeting.html %}
+<!-- end -->
+
+<!-- Markdown JS -->
+<script src="{{site.baseurl}}/assets/js/markdown-editor.js"></script>
+<script>
+    // Most options demonstrate the non-default behavior
+var simplemde = new SimpleMDE({
+	autofocus: true,
+	autosave: {
+		enabled: true,
+		uniqueId: "MyUniqueID",
+		delay: 1000,
+	},
+	element: document.getElementById("demo"),
+	forceSync: true,
+	indentWithTabs: false,
+	initialValue: "Type your content 😊",
+	insertTexts: {
+		horizontalRule: ["", "\n\n-----\n\n"],
+		image: ["![](http://", ")"],
+		link: ["[", "](http://)"],
+		table: ["", "\n\n| Column 1 | Column 2 | Column 3 |\n| -------- | -------- | -------- |\n| Text     | Text      | Text     |\n\n"],
+	},
+	lineWrapping: true,
+	parsingConfig: {
+		allowAtxHeaderWithoutSpace: false,
+		strikethrough: false,
+		underscoresBreakWords: true,
+	},
+	placeholder: "Type here...",
+	previewRender: function(plainText) {
+		return customMarkdownParser(plainText); // Returns HTML from a custom parser
+	},
+	previewRender: function(plainText, preview) { // Async method
+		setTimeout(function(){
+			preview.innerHTML = customMarkdownParser(plainText);
+		}, 250);
+
+		return "Loading...";
+	},
+	promptURLs: true,
+	renderingConfig: {
+		singleLineBreaks: false,
+		codeSyntaxHighlighting: true,
+	},
+	shortcuts: {
+		drawTable: "Cmd-Alt-T"
+	},
+	showIcons: ["code", "table"],
+	spellChecker: false,
+	status: false,
+	status: ["autosave", "lines", "words", "cursor"], // Optional usage
+	status: ["autosave", "lines", "words", "cursor", {
+		className: "keystrokes",
+		defaultValue: function(el) {
+			this.keystrokes = 0;
+			el.innerHTML = "0 Keystrokes";
+		},
+		onUpdate: function(el) {
+			el.innerHTML = ++this.keystrokes + " Keystrokes";
+		}
+	}], // Another optional usage, with a custom status bar item that counts keystrokes
+	styleSelectedText: false,
+	tabSize: 4,
+	toolbarTips: true,
+});
+</script>
+
+<script src="{{ site.baseurl }}/assets/js/prism.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/theme.js"></script>
+
+{% if site.lazyimages == "enabled" %}
+<script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
+{% endif %}
+
+{% if page.layout == 'post' %}
+<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="video-main">
+    <a href="" style="text-decoration: none;">
+    <div class="video-thumbnail" style="background: url({{site.baseurl}}{{video.thumbnail}});background-size: cover;background-position: center;">
+        {% assign category = site.category | where: "name", video.category | first %}
+        {% if video.category %}<span class="video-category" style="background: #{{category.color}};color: #212529">{{category.display_name}}</span>{% endif %}
+        <span class="video-details" style="color: #{{category.color}};">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle zoom"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            <span class="video-title" style="color: #{{category.bg_color}};">{{video.title}}</span>
+            <span class="video-date" style="color: #{{category.bg_color}};">{{video.duration}}hr</span>
+        </span>
+    </div>
+    </a>
+</div>

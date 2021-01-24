@@ -1,0 +1,33 @@
+<!-- Author Box -->
+{% if page.author %}
+{% if site.authorbox == "enabled" %}
+<div class="authorbox align-items-center">
+    <div class="author_section">
+        <div class="author_post_avatar" style="background-image: url('{{site.baseurl}}{{ author.avatar }}');">
+        </div>
+        <div class="author_post_info">
+            <span class="post_author-name"><a target="_blank" class="text-dark" href="{{ author.web }}">{{ author.display_name }}</a></span>
+            <span class="post_author-position">{{ author.position }}</span>
+            <div class="post_author-details">
+                <span>
+                    <span class="details_heading">Articles</span>
+                    <span class="details_result">38</span>
+                </span>
+                <span>
+                    <span class="details_heading">Podcasts</span>
+                    <span class="details_result">41</span>
+                </span>
+                <span>
+                    <span class="details_heading">Videos</span>
+                    <span class="details_result">10</span>
+                </span>
+            </div>
+            <div class="post_author-buttons">
+                <a class="author_button-1">Profile</a>
+                <a class="author_button-2">Contact</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}

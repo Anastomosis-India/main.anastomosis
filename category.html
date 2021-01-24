@@ -1,0 +1,12 @@
+---
+title: 📦Category
+permalink: "/category"
+layout: default
+---
+<span class="index-heading" style="color: #{{page.color}};">{{page.title}}</span>
+<p>Explore the most informative contents from the following categories🤝. Every peice of information is important.😃</p>
+<div class="blog-grid-container">
+  {% for category in site.category %}
+          {% include category.html %}
+  {% endfor %}
+</div>

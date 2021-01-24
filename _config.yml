@@ -1,0 +1,145 @@
+# Quick Meta
+title: Lapidify
+name: Lapidify
+short_name: Lapidify
+description: We take you to the awesome world of knowledge. Read contents from almost all ypur favorite topics including science, technology, facts etc. Enjoy!
+language: en
+color: "#0792ce"
+lang_direction: "ltr"
+bg_color: "#fff"
+url: "https://lapidify.tk"
+
+# Manifest
+manifest:
+  lang: en
+  dir: ltr
+  name: Lapidify
+  short_name: Lapidify
+  display: standalone
+  description: We take you to the awesome world of knowledge. Read contents from almost all ypur favorite topics including science, technology, facts etc. Enjoy!
+  background_color: "#fff"
+  theme_color: "#fff"
+  orientation: natural
+  start_url: "/"
+
+# BaseURL
+baseurl: ""
+
+# Author Box
+authorbox: enabled
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-figure
+  - jekyll-pwa-plugin
+
+# Highlighter
+highlighter: none
+
+# Disqus
+disqus: demowebsite
+
+# Includes
+include:
+  - _pages
+
+# Mailchimp
+mailchimp-list: ''
+
+# Permalink
+permalink: /:title/
+
+# Lazy Load Images
+lazyimages: disabled
+
+# Paginate
+paginate_path: /page:num/
+paginate: 6
+
+#Saas
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Markdown
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+
+# Collections
+collections:
+  authors:
+    output: true
+  category:
+    output: true
+    permalink: /category/:name
+  books:
+    output: true
+    permalink: /books/:title
+  lapidify:
+    output: true
+  videos:
+    output: true
+  facts:
+    output: true
+    permalink: /facts/:title
+  alerts:
+    output: true
+
+# Defaults
+defaults:
+  # all book
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "book"
+  # all category
+  - scope:
+      path: ""
+      type: "category"
+    values:
+      layout: "category"
+  # all facts
+  - scope:
+      path: ""
+      type: "facts"
+    values:
+      layout: "facts"
+
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: /cat/:name/
+
+# Exclude
+exclude:
+  - changelog.md
+  - LICENSE.txt
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+#PWA
+pwa:
+  enabled: true # Optional
+  sw_src_filepath: service-worker.js # Optional
+  sw_dest_filename: service-worker.js # Optional
+  dest_js_directory: assets/js # Required
+  precache_recent_posts_num: 5 # Optional
+  precache_glob_directory: / # Optional
+  precache_glob_patterns: # Optional
+    - "{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff}"
+    - index.html
+  precache_glob_ignores: # Optional
+    - sw-register.js
+    - "fonts/**/*"

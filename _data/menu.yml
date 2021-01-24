@@ -1,0 +1,16 @@
+menu:
+  - title: Home
+    url: /
+    badge: icon-home
+  - title: Post
+    url: /blog
+    badge: icon-file-text
+  - title: Authors
+    url: /authors
+    badge: icon-user
+  - title: Search
+    url: /search
+    badge: icon-search
+  - title: Contact
+    url: /contact
+    badge: icon-headphones

@@ -1,0 +1,10 @@
+<div class="app_menu">
+    {% for item in site.data.menu.menu %}
+	<a href="{{ site.basurl }}{{ item.url }}" class="{% if page.title == item.title %}active{% else %}normal{% endif %}" style="text-decoration: none;">
+        <span>
+            <span class="{{ item.badge }} app_menu-icon" style="font-size: 25px;"></span>
+            <span class="app_menu-name">{{ item.title }}</span>
+        </span>
+    </a>
+    {% endfor %}
+</div>
