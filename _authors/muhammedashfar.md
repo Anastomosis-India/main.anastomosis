@@ -9,5 +9,7 @@ web: https://muhd.tk
 insta: muhammedashfar_
 description: Hi, I am Muhammed Ashfar.
 position: Founder & Developer
+show_my_photo: yes
+gender: male
 ---
 

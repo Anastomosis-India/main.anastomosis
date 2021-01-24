@@ -98,12 +98,14 @@ collections:
       - label: "Show my profile photo"
         name: "show_my_photo"
         widget: "select"
+        required: true
         options:
           - { label: "Yes, Sure!", value: "yes" }
           - { label: "No, I don't like it!", value: "no" }
       - label: "Gender"
         name: "gender"
         widget: "select"
+        required: true
         options:
           - { label: "Male", value: "male" }
           - { label: "Female", value: "female" }
