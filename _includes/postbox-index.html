@@ -1,15 +1,16 @@
 <!-- begin post -->
 {% assign author = site.authors | where: "name", post.author | first %}
-{% assign category = site.category | where: "name", post.category | first %}
+{% assign topic = site.topics | where: "title", post.topic | first %}
 
 <div class="post_image-grid">
-    <div class="post_image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');background-size: cover;background-position: center;"></div>
+    <div class="post_image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');background-size: cover;background-position: center;">
+        {% if post.topic %}
+            <span class="post category"><a href="{{site.baseurl}}{{category.url}}" style="text-decoration: none;color: #ffffff;">{{ topic.title }}</a></span>
+        {% endif %}
+    </div>
     <div class="blog-grid-item">
         <div class="card">
             <div class="card-body">
-                {% if post.category %}
-                <span class="post category"><a href="{{site.baseurl}}{{category.url}}" style="text-decoration: none;color: #ffffff;">{{ category.display_name }}</a></span>
-                {% endif %}
                 <h2 class="card-title">
                     <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                     {% if post.rating %}

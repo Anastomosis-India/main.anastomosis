@@ -4,7 +4,7 @@ layout: post
 title: Da Vinci Robotic Surgery
 image: /uploads/surgical_1200x736_davinci.jpg
 author: Eva
-topic: Health
+topic: Anatomy
 tags:
   - medicine
   - innovations

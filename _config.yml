@@ -76,12 +76,12 @@ kramdown:
 collections:
   authors:
     output: true
-  category:
+  maincategories:
     output: true
-    permalink: /category/:name
-  books:
+    permalink: /maincategory/:name
+  topics:
     output: true
-    permalink: /books/:title
+    permalink: /topics/:title
   lapidify:
     output: true
   videos:

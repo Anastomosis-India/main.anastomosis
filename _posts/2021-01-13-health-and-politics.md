@@ -4,7 +4,7 @@ layout: post
 title: Health and Politics
 image: /uploads/deletelater.jpg
 author: Sameera
-topic: Social Medicine
+topic: Community Medicine
 tags:
   - socialmedicine
   - health

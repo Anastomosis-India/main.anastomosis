@@ -17,7 +17,7 @@ collections:
 # Main Categories
   - label: "Main Categories"
     name: "main_categories"
-    folder: "_main.categories"
+    folder: "_maincategories"
     create: true
     slug: "{{slug}}"
     delete: false

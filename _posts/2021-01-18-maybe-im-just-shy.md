@@ -4,19 +4,20 @@ layout: post
 title: Maybe, I'm Just Shy!
 image: /uploads/0419_socialanxiety_feature.jpg
 author: Quirkyluna
-topic: Health
+topic: Community Medicine
 tags:
-  - "#SocialAnxiety"
-  - "#society"
-  - "#conversation"
-  - "#discussion"
-  - "#shy"
-  - "#crowds"
-  - "#interaction"
-  - "#people"
-  - "#mentalhealth"
+  - "SocialAnxiety"
+  - "society"
+  - "conversation"
+  - "discussion"
+  - "shy"
+  - "crowds"
+  - "interaction"
+  - "people"
+  - "mentalhealth"
 description: Social Anxiety and how to overcome it
 ---
+
 ##### **Analyse...**
 
 How often have you felt the need to get out of a party just so you could have a little quiet time with no people around?

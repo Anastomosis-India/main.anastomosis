@@ -4,7 +4,7 @@ layout: post
 title: Addressing mental health and wellness of medical students.
 image: /uploads/a5b6a5af6bcc3457755a52a18f5742fe.jpg
 author: itsalina
-topic: Health
+topic: Community Medicine
 tags:
   - mental health
   - medical school

@@ -110,17 +110,11 @@ ga('send', 'pageview');
 <div id="blackover-nav" class="blackover"></div>
 <nav id="menu">
     <ul>
-        <h3>Navigation</h3>
-    {% for item in site.data.menu.menu %}
-      {% if item.title and item.url %}
+		<label id="greetings" style="margin-bottom:0px;"></label>
+    {% for maincategory in site.maincategories %}
         <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#{{item.color}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="{{item.svg-class}}">{{item.svg}}</svg>
-        <a href="{{ site.baseurl }}{{item.url}}" style="color: #{{item.color}}">{{ item.title}} 
-                <span class="badge" style="background-color: #{{item.color}};color: #fff;border-radius: 10px;">{{ item.badge }}</span> 
-                <span class="menu-subheading">{{item.subheading}}</span>
-            </a>
+			<span class="main_category">{{ maincategory.title }}</span>
         </li>
-      {% endif %}
     {% endfor %}
     </ul>
 </nav>

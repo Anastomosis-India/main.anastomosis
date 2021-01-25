@@ -4,7 +4,7 @@ disqus: false
 archive: false
 post_class: post-template
 ---
-{% assign category = site.category | where: "name", page.category | first %}
+{% assign topic = site.topics | where: "title", page.topic | first %}
 
 <!-- Featured Image -->
 {% include featured-image.html %}
@@ -12,27 +12,25 @@ post_class: post-template
 <div class="author-full" {% if page.image %}style="margin-top: -100px;"{% endif %}>
     <div class="entry-header">
         <!-- Post Title -->
-        <span class="category" style="padding: 10px 20px;font-weight: 600;">{{ category.display_name }}</span>
+        <span class="category" style="padding: 10px 20px;font-weight: 600;">{{ topic.title }}</span>
         <h1 class="posttitle" style="margin-top: 15px; color: #292a2f;">{{ page.title }}</h1>
         <!-- Author & Date  Box -->
         {% assign author = site.authors | where: "name", page.author | first %}
         {% if page.author %}
-        <div class="post_page_grid">
-            <div class="post_author_grid align-items-center mt-4">
-                <div>
-                    {% if author.avatar %}
-                    <img class="author-thumb" src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.display_name }}" style="border: 2px solid #4c6fff;">
-                    {% else %}
-                    <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
-                    {% endif %}
-                </div>
-                <div>
-                <span class="post-name"><a target="_blank" href="{{ author.web }}" style="color: #292a2f;font-weight: 600;">{{ author.display_name }}</a></span>
-                <span class="date" style="color: #6f8696;"><time class="post-date" datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date_to_string }}</time></span>
-                {% if page.last_modified_at %}
-                (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+        <div class="post_author_grid align-items-center mt-4">
+            <div>
+                {% if author.avatar %}
+                <img class="author-thumb" src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.display_name }}" style="border: 2px solid #4c6fff;">
+                {% else %}
+                <img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
                 {% endif %}
-                </div>
+            </div>
+            <div>
+            <span class="post-name"><a target="_blank" href="{{ author.web }}" style="color: #292a2f;font-weight: 600;">{{ author.display_name }}</a></span>
+            <span class="date" style="color: #6f8696;"><time class="post-date" datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date_to_string }}</time></span>
+            {% if page.last_modified_at %}
+            (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
+            {% endif %}
             </div>
         </div>
         {% endif %}
