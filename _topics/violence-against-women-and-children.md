@@ -1,0 +1,9 @@
+---
+title: Violence Against Women And Children
+main_category: Health and Wellbeing
+---
+***Violence against women*** – particularly intimate partner violence and sexual violence – is a major public and clinical health problem and a violation of women's human rights. It is rooted in and perpetuates gender inequalities. **Intimate partner violence** refers to behavior by an intimate partner or ex-partner that causes *physical, sexual or psychological harm, including physical aggression, sexual coercion, psychological abuse and controlling behaviours.* **Sexual violence** is "*any sexual act, attempt to obtain a sexual act, or other act directed against a person’s sexuality using coercion, **by any person regardless of their relationship to the victim**, in any setting.* It includes rape, defined as the physically forced or otherwise coerced penetration of the vulva or anus with a penis, other body part or object."
+
+**Globally 1 in 3 women experience physical and/or sexual violence in their lifetime, *mostly by an intimate partner.*** 
+
+***Violence against children*** includes all forms of violence against people under 18 years old. For infants and younger children, violence mainly involves *child maltreatment (i.e. physical, sexual and emotional abuse and neglect) at the hands of parents and other authority figures. **Boys and girls are at equal risk of physical and emotional abuse and neglect, and girls are at greater risk of sexual abuse**.* *As children reach adolescence, peer violence and intimate partner violence, in addition to child maltreatment, become highly prevalent.*
