@@ -5,4 +5,5 @@ auth_color: "#aad8e2"
 email: alina.ann3@gmail.com
 show_my_photo: no
 gender: female
+position: Content Contributor
 ---

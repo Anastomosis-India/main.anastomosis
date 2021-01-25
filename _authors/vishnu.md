@@ -5,4 +5,5 @@ auth_color: "#c53535"
 avatar: /uploads/img_20180620_130323_904-01.jpeg
 instagram: vishnu_vaishnav.am
 whatsapp: "8281480069"
+position: Co-founder and Maintenance
 ---
