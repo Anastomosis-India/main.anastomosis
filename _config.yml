@@ -39,7 +39,7 @@ plugins:
   - jekyll-pwa-plugin
 
 # Highlighter
-highlighter: none
+highlighter: rouge
 
 # Disqus
 disqus: demowebsite
