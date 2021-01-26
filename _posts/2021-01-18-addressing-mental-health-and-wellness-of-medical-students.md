@@ -13,6 +13,7 @@ tags:
   - wellness
   - medicalstudents
   - ""
+bottom_illustration: "3 SCENE.svg"
 ---
 We all are well-known about the Hippocrates oath, an oath of ethics historically taken by physicians swearing by several healing gods, to uphold specific ethical standards.
 

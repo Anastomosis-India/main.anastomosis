@@ -91,7 +91,7 @@ ga('send', 'pageview');
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 {% assign category = site.category | where: "name", page.category | first %}
-<body {% if page.bg_color %}style="background: linear-gradient(to right bottom, #{{page.bg_color}} 0%, #fff 100%);"{% endif %}{% if page.category %}style="background: linear-gradient(to right bottom, #{{category.bg_color}} 0%, #fff 100%);"{% endif %}>
+<body {% if page.bottom_illustration %}style="background-image: url('{{ site.baseurl }}/assets/drawkit/{{ page.bottom_illustration }}');background-repeat: no-repeat;"{% endif %}>
 	<!-- defer loading of font and font awesome -->
 	<noscript id="deferred-styles">
 		<link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet">
@@ -109,8 +109,9 @@ ga('send', 'pageview');
 </div>
 <div id="blackover-nav" class="blackover"></div>
 <nav id="menu">
+	<label id="greetings" style="margin-bottom:0px;background-image: url('{{ site.baseurl }}/assets/drawkit/wfh_1.svg');background-repeat: no-repeat;">
+	</label>
     <ul>
-		<li><label id="greetings" style="margin-bottom:0px;"></label></li>
     {% for maincategory in site.maincategories %}
         <li>
 			<span class="main_category">{{ maincategory.title }}</span>

@@ -288,6 +288,19 @@ collections:
         widget: "image"
         required: true
         hint: "Upload a image related to the post."
+      - label: "Bottom Illustration"
+        name: "bottom_illustration"
+        widget: "select"
+        required: true
+        options:
+          - { label: "Graduated/ Education", value: "1 SCENE.svg" }
+          - { label: "Graduated/ Ceremony", value: "2 SCENE.svg" }
+          - { label: "Thinking/ Working", value: "3 SCENE.svg" }
+          - { label: "Discussion/ Studying", value: "4 SCENE.svg" }
+          - { label: "Discussion/ Group Study", value: "5 SCENE.svg" }
+          - { label: "Library/ Studying", value: "6 SCENE.svg" }
+          - { label: "Group Discussion/ Friends", value: "7 SCENE.svg" }
+          - { label: "Teaching/ Daughter", value: "8 SCENE.svg" }
       - label: "Author"
         name: "author"
         widget: "relation"

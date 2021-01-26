@@ -16,6 +16,7 @@ tags:
   - "people"
   - "mentalhealth"
 description: Social Anxiety and how to overcome it
+bottom_illustration: "4 SCENE.svg"
 ---
 
 ##### **Analyse...**

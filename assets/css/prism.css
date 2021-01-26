@@ -753,9 +753,10 @@ li.lunrsearchresult {
 /* Greetings index */
 #greetings {
     background: #5374ff;
-    padding: 20px;
-	border-radius: 15px;
+    padding: 60px 25px 40px 25px;
+    border-radius: 0px 0px 20px 20px;
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	background-position-x: 190px;
 }
 
 .greeting_qoute {
@@ -786,6 +787,8 @@ li.lunrsearchresult {
     border-radius: 20px;
 	padding: 15px;
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	background-position-x: 160px;
+	background-position-y: 160px;
 }
 
 .post_image {
@@ -1092,6 +1095,13 @@ a.normal:hover {
 	#menu ul li {
 		width: calc(100vw - 60px);
 	}
+	#greetings {
+		background-position-x: 180px;
+	}
+	.post_image-grid {
+		background-position-x: 120px;
+		background-position-y: 180px;
+	}
 }
 
 @media (max-width: 400px) {
@@ -1115,6 +1125,13 @@ a.normal:hover {
 	}
 	.logo-box {
 		top: 13px;
+	}
+	#greetings {
+		background-position-x: 140px;
+	}
+	.post_image-grid {
+		background-position-x: 120px;
+		background-position-y: 200px;
 	}
 }
 

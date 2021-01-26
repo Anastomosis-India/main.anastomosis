@@ -22,6 +22,7 @@ tags:
   - empathy
   - WHO
 description: ""
+bottom_illustration: "2 SCENE.svg"
 ---
 According to the **WHO**, health is defined as a *state of complete physical, mental and social wellbeing and not merely the absence of disease or infirmity.* The absence of a disease or symptoms does not guarantee happiness or complete health.\
 \
