@@ -699,6 +699,17 @@ li.lunrsearchresult {
 }
 
 /* Small post - Index page slider */
+.verified {
+    background: linear-gradient(to right, #5374ff 0%, #7300fe 100%);
+    padding: 4px;
+    border-radius: 50%;
+    font-size: 8px;
+    color: #fff;
+    border: 2px solid #f4f7f9;
+    display: flex;
+    width: 5px;
+}
+
 .post_small {
     display: grid !important;
     grid-template-columns: 1fr 2fr;
@@ -708,13 +719,21 @@ li.lunrsearchresult {
     padding: 10px;
 	border-radius:20px;
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-	margin: 30px 20px !important;
 }
 
 .post_small-image {
     background: #ccc;
     width: 100%;
 	border-radius: 10px;
+}
+
+.post_small-search-image {
+    background: #ccc;
+    width: 100%;
+    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .post_small-image_icon {
@@ -743,11 +762,11 @@ li.lunrsearchresult {
 .post_small-ecerpt_topic {
     display: block;
     font-size: 11px;
-    background: #f2f5f8;
+    background: linear-gradient(to right, #5374ff 0%, #7300fe 100%);
     width: max-content;
     padding: 1px 5px;
-    border-radius: 10px;
-    color: #8397a4;
+    border-radius: 5px;
+    color: #fff;
 }
 
 /* Greetings index */
@@ -799,41 +818,35 @@ li.lunrsearchresult {
 }
 
 /* Featured Authors - Home */
-.author_featured_box {
-    background: #fff;
-    padding: 20px;
-	border-radius: 20px;
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
 
-.authors_featured {
-    background: #f4f7f9;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 10px;
-    padding: 5px;
-    border-radius: 10px;
+.author_slider {
+    text-align: center !important;
 }
 
 .author_single {
-    width: 100%;
-    height: 100px;
-    background: #393939;
+    width: 45px;
+    height: 45px;
+	background: #393939;
+	background-position-x: center;
+	background-size: cover;
+	margin: 0px auto;
+	border-radius: 20px;
+	margin: 10px;
+	border: 2px solid #5374ff;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* Category Slider - Index */
 .category-index {
     background: #ffffff;
-    margin: 20px 5px;
-    padding: 10px 20px;
+    margin: 8px 5px;
+    padding: 5px 10px;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
 
 .category-name {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 800;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -1101,6 +1114,11 @@ a.normal:hover {
 	.post_image-grid {
 		background-position-x: 120px;
 		background-position-y: 180px;
+	}
+	body {
+		background-position-x: 160px;
+		background-position-y: 0px;
+		background-size: 350px;
 	}
 }
 

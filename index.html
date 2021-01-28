@@ -3,22 +3,50 @@ title: Home
 layout: default
 color: 0792ce
 ---
-
-<!-- Posts Index
-================================================== -->
-<span class="index-heading">Blog Posts</span>
-<span class="index-subheading">Collection of best contents for you.</span>
-<div class="blog-grid-container">
-    {% for post in paginator.posts %}
-        {% include postbox-index.html %}
+<div class="authors_featured">
+    {% for author in site.authors %}
+    <div class="author_slider">
+        <div class="author_single" style="{% if author.avatar %}background-image: url('{{ site.baseurl }}{{ author.avatar }}');{% else %}{% if author.gender == 'female' %}background-image: url('{{ site.baseurl }}/assets/toy_faces/ToyFaces_Colored_BG_8.jpg');{% else %}background-image: url('{{ site.baseurl }}/assets/toy_faces/ToyFaces_Colored_BG_29.jpg');{% endif %}{% endif %}">
+            <span class="verified"></span>
+        </div>
+    </div>
     {% endfor %}
 </div>
 
-<!-- Pagination
+<!-- Topic
 ================================================== -->
-<div class="bottompagination">
-<span class="navigation" role="navigation">
-    {% include pagination.html %}
-</span>
+<div class="topic-section" style="margin-top: 5px;">
+    {% for topic in site.topics %}
+    <span class="category-index" style="background:{{ topic.bg_color }};">
+        <span class="category-name" style="color:{{ topic.color }};">{{ topic.title }}</span>
+    </span>
+    {% endfor %}
+</div>
+
+<!-- Featured Post
+================================================== -->
+<div class="post-section owl-carousel owl-theme" style="margin-top: 20px;">
+    {% for post in site.posts %}
+    {% include postbox-index.html %}
+    {% endfor %}
+</div>
+
+<!-- Post Small
+================================================== -->
+<div class="blog-grid-container">
+    {% for post in site.posts limit:5 %}
+    {% include post-small.html %}
+    {% endfor %}
+</div>
+
+<!-- Recent Posts
+================================================== -->
+<span class="index-heading">🔥 Recent Posts</span>
+<span class="index-subheading">Collection of mixed contents</span>
+
+<div class="blog-grid-container" style="grid-template-columns: 1fr 1fr;grid-gap: 10px;">
+    {% for post in site.posts limit:4 %}
+        {% include postbox-index.html %}
+    {% endfor %}
 </div>
 

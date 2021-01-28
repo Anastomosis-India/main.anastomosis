@@ -1,32 +1,31 @@
 $(document).ready(function(){
-    $('.index-page').slick({
+    $('.authors_featured').slick({
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 300,
-        slidesToShow: 2,
+        slidesToShow: 12,
         slidesToScroll: 2,
+        prevArrow: false,
+        nextArrow: false,
         responsive: [
           {
             breakpoint: 1300,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-              infinite: false,
-              dots: false,
-              nav: false,            }
+              slidesToShow: 12,
+              slidesToScroll: 1,         }
           },
           {
             breakpoint: 600,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 7,
               slidesToScroll: 2
             }
           },
           {
             breakpoint: 480,
             settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToShow: 5,
+              slidesToScroll: 5,
             }
           }
           // You can unslick at a given breakpoint now by adding:
@@ -64,7 +63,8 @@ $(document).ready(function(){
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              centerMode: true,
             }
           }
           // You can unslick at a given breakpoint now by adding:
@@ -75,10 +75,13 @@ $(document).ready(function(){
   });
 
 $(document).ready(function(){
-    $('.category-section').slick({
+    $('.topic-section').slick({
         dots: false,
-        infinite: true,
+        infinite: false,
         slidesToShow: 3,
         variableWidth: true,
+        slidesToScroll: 2,
+        prevArrow: false,
+        nextArrow: false
       });
 });

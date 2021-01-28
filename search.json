@@ -1,0 +1,17 @@
+---
+layout: null
+---
+[
+  {% for post in site.posts %}
+    {
+
+      "title" : "{{ post.title | escape }}",
+      "image" : "{{ post.image }}",
+      "url" : "{{ site.baseurl }}{{ post.url }}",
+      "topic" : "{{ post.topic }}",
+      "tags" : "{{ post.tags | join: ', ' }}",
+      "date" : "{{ post.date | date_to_string }}"
+
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

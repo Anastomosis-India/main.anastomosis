@@ -21,7 +21,7 @@ body, input, button, select, optgroup, textarea {
 }
 body {
     line-height:1.7;
-    background: #f4f7f9 !important;
+    background: #f4f7f9;
     color: #788d9b !important;
 }
 a {
@@ -263,6 +263,8 @@ img, img:hover {
     .card {
         border:0;
         border-radius: 20px;
+        width: 100%;
+        background: #ffffff5c;
         &:hover {
            .card-title a {
                 /*background-size: 100% 100%;*/

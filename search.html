@@ -1,0 +1,24 @@
+---
+title: Search
+permalink: "/search"
+layout: default
+---
+<span class="index-heading" style="color: #{{page.color}};">{{page.title}}</span>
+<p>Explore the most informative contents from the following categories🤝. Every peice of information is important.😃</p>
+<!-- Html Elements for Search -->
+<input type="text" id="search-input" placeholder="search...">
+<div id="results-container" class="blog-grid-container">
+</div>
+  
+  <!-- Script pointing to search-script.js -->
+  <script src="{{ site.baseurl }}/assets/js/search-script.js" type="text/javascript"></script>
+  
+  <!-- Configuration -->
+  <script type="text/javascript">
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<div class="post_small"><img class="post_small-search-image" src="{image}" alt="{title}"><div class="post-small-excerpt"><span class="post_small-ecerpt_topic">{topic}</span><span class="post_small-excerpt_heading">{title}</span><span class="post_small-excerpt_date">{date}</span></div></div>',
+  })
+  </script>
