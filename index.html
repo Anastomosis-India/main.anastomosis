@@ -23,17 +23,11 @@ color: 0792ce
     {% endfor %}
 </div>
 
-<!-- Featured Post
-================================================== -->
-<div class="post-section owl-carousel owl-theme" style="margin-top: 20px;">
-    {% for post in site.posts %}
-    {% include postbox-index.html %}
-    {% endfor %}
-</div>
 
 <!-- Post Small
 ================================================== -->
-<div class="blog-grid-container">
+<span class="index-heading">Recent Posts</span>
+<div class="post_small-index">
     {% for post in site.posts limit:5 %}
     {% include post-small.html %}
     {% endfor %}

@@ -39,9 +39,11 @@ $(document).ready(function(){
     $('.post_small-index').slick({
         dots: false,
         infinite: false,
-        speed: 300,
         slidesToShow: 3,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
+        speed: 300,
+        prevArrow: false,
+        nextArrow: false,
         responsive: [
           {
             breakpoint: 1300,
@@ -64,7 +66,6 @@ $(document).ready(function(){
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              centerMode: true,
             }
           }
           // You can unslick at a given breakpoint now by adding:
@@ -80,7 +81,7 @@ $(document).ready(function(){
         infinite: false,
         slidesToShow: 3,
         variableWidth: true,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         prevArrow: false,
         nextArrow: false
       });

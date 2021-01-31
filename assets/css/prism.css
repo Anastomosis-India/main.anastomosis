@@ -714,11 +714,12 @@ li.lunrsearchresult {
     display: grid !important;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
-    grid-gap: 10px !important;
+    grid-gap: 6px !important;
     background: #fff;
-    padding: 10px;
+    padding: 7px;
 	border-radius:20px;
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	margin: 10px;
+	background-position-x: 200px;
 }
 
 .post_small-image {
@@ -736,13 +737,10 @@ li.lunrsearchresult {
     object-position: center;
 }
 
-.post_small-image_icon {
-	color: #fff;
-	margin-left: 4px;
-}
-
 .post-small-excerpt {
-    padding: 5px;
+	padding: 5px;
+	line-height: 1rem;
+	background: #ffffffa8;
 }
 
 .post_small-excerpt_date {
@@ -755,8 +753,16 @@ li.lunrsearchresult {
 .post_small-excerpt_heading {
     display: block;
     color: #3a3b40 !important;
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 14px;
+	font-weight: 900;
+	margin-bottom: 5px;
+}
+
+.post_small-excerpt_desc {
+    font-size: 11px;
+    font-weight: 600;
+	font-family: 'Nunito', sans-serif;
+	color: #667785 !important;
 }
 
 .post_small-ecerpt_topic {
@@ -766,9 +772,44 @@ li.lunrsearchresult {
     width: max-content;
     padding: 1px 5px;
     border-radius: 5px;
-    color: #fff;
+	color: #fff;
+	margin-bottom: 5px;
 }
 
+.post_small-excerpt_author-details {
+    display: flex;
+    margin-top: 5px;
+}
+
+.post_small-excerpt_author-avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    border: 2px solid #5c55ff;
+}
+
+.post_small-excerpt_author-desc {
+    margin-left: 5px;
+}
+
+.post_small-excerpt_author {
+    font-size: 11px;
+    font-weight: 700;
+    color: #3a3b40;
+    display: block;
+    font-family: 'Nunito', sans-serif;
+}
+
+.post_small-excerpt_date {
+    display: block;
+    color: #798e9c !important;
+    font-size: 9px;
+    font-weight: 700;
+    margin-top: -3px;
+    font-family: 'Nunito', sans-serif;
+}
 /* Greetings index */
 #greetings {
     background: #5374ff;
@@ -1077,8 +1118,10 @@ a.normal:hover {
 	}
 	.index-heading {
 		display: block;
-		font-size: 30px;
+		font-size: 16px;
 		font-weight: 800;
+		color: #3a3b40;
+		margin-top: 10px;
 	}
 	.index-subheading {
 		display: block;

@@ -18,9 +18,6 @@ tags:
 description: Social Anxiety and how to overcome it
 bottom_illustration: "4 SCENE.svg"
 ---
-
-##### **Analyse...**
-
 How often have you felt the need to get out of a party just so you could have a little quiet time with no people around?
 
 Have you ever come up with different things you could have said or done by continuously running a situation in your brain that has already happened in the past? (*"I shouldn't have slammed the car door that hard. Hope she didn't feel bad about me doing that!"*)

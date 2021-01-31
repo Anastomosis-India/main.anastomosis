@@ -1,13 +1,19 @@
 {% assign topic = site.topics | where: "title", post.topic | first %}
-<div class="post_small">
-    <div class="post_small-image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');background-size: cover;background-position: center;">
-        <span class="post_small-image_icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-        </span>
+{% assign author = site.authors | where: "name", post.author | first %}
+<a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+    <div class="post_small" style="background-image: url('{{ site.baseurl }}/assets/drawkit/{{ post.bottom_illustration }}');background-repeat: no-repeat;">
+        <div class="post_small-image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');background-size: cover;background-position: center;"></div>
+        <div class="post-small-excerpt">
+            <span class="post_small-ecerpt_topic" style="background: {{ topic.bg_color }};color: {{ topic.color }};">{{ topic.title }}</span>
+            <span class="post_small-excerpt_heading">{{ post.title | truncate:35 }}</span>
+            <span class="post_small-excerpt_desc">{{ post.excerpt | truncate:70 | remove: '<p>' | remove: '</p>' }}</span>
+            <div class="post_small-excerpt_author-details">
+                <div class="post_small-excerpt_author-avatar" style="{% if author.avatar %}background-image: url('{{ site.baseurl }}{{ author.avatar }}');{% else %}{% if author.gender == 'female' %}background-image: url('{{ site.baseurl }}/assets/toy_faces/ToyFaces_Colored_BG_8.jpg');{% else %}background-image: url('{{ site.baseurl }}/assets/toy_faces/ToyFaces_Colored_BG_29.jpg');{% endif %}{% endif %}"></div>
+                <div class="post_small-excerpt_author-desc">
+                    <span class="post_small-excerpt_author">{{ author.display_name }}</span>
+                    <span class="post_small-excerpt_date">{{ post.date | date_to_string }}</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="post-small-excerpt">
-        <span class="post_small-ecerpt_topic">{{ topic.title }}</span>
-        <span class="post_small-excerpt_heading">{{ post.title | truncate:35 }}</span>
-        <span class="post_small-excerpt_date">{{ post.date | date_to_string }}</span>
-    </div>
-</div>
+</a>
